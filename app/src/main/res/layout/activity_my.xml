@@ -1,0 +1,105 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="@android:color/white"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MyActivity">
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="their email"
+        android:ems="10"
+        android:textColor="#b5b5bb"
+        android:gravity="center"
+        android:padding="15dp"
+        android:id="@+id/email"
+        android:fontFamily="sans-serif-light"
+        android:background="#e6e6e6"
+        android:layout_marginTop="170dp"
+         />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/meetingPlace"
+        android:padding="15dp"
+        android:textColor="#b5b5bb"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:hint="where you met(optional)"
+
+        android:background="#e6e6e6"
+
+        android:layout_below="@+id/email"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="send intro"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/white"
+        android:background="#6544a1"
+        android:id="@+id/submit"
+        android:layout_below="@+id/meetingPlace"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="edit my intro"
+        android:textSize="20sp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:fontFamily="sans-serif-light"
+        android:id="@+id/edit"
+        android:textColor="#6544a1"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
+        android:contentDescription="Hello"
+        android:scaleX=".75"
+        android:scaleY=".75"
+        android:src="@drawable/logo"
+        android:layout_alignBottom="@+id/email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="73dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bubble"
+        android:scaleX="1.1"
+        android:layout_marginLeft="5dp"
+        android:scaleY="1.1"
+        android:src="@drawable/feedback"
+        android:layout_alignTop="@+id/edit"
+        android:layout_alignLeft="@+id/submit" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/question"
+        android:scaleX="1.1"
+        android:layout_marginRight="5dp"
+        android:scaleY="1.1"
+        android:src="@drawable/unamed"
+        android:layout_alignTop="@+id/edit"
+        android:layout_alignRight="@+id/submit" />
+
+</RelativeLayout>
