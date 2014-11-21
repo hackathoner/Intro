@@ -37,7 +37,7 @@
         android:fontFamily="sans-serif-light"
         android:gravity="center"
         android:layout_marginTop="15dp"
-        android:hint="where you met(optional)"
+        android:hint="where you met (optional)"
 
         android:background="#e6e6e6"
 
@@ -48,13 +48,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="send intro"
-        android:fontFamily="sans-serif-light"
         android:layout_marginTop="30dp"
         android:textColor="@android:color/white"
         android:background="#6544a1"
         android:id="@+id/submit"
         android:layout_below="@+id/meetingPlace"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-light"
+        android:capitalize="none" />
 
     <TextView
         android:layout_width="wrap_content"

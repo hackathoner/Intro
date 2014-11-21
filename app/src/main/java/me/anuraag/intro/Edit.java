@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import co.vueanalytics.vue.VUE;
+
 public class Edit extends Activity {
     private EditText emailHead,emailBody;
     private Button submit,cancel;
@@ -19,6 +21,9 @@ public class Edit extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        VUE.launch(this, "274f41fa-169d-42f7-9d3a-d8d643aaaf96");
+
         setContentView(R.layout.activity_edit);
         ActionBar bar = this.getActionBar();
         bar.hide();

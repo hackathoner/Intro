@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//import com.uservoice.uservoicesdk.Config;
+//import com.uservoice.uservoicesdk.UserVoice;
 
 public class MyActivity extends Activity {
 
@@ -71,19 +73,30 @@ public class MyActivity extends Activity {
             }
         });
 
+        // Set this up once when your application launches
+//        Config config = new Config("killthebusinesscard.uservoice.com");
+//        config.setShowKnowledgeBase(false);
+//        config.setShowForum(false);
+//        config.setShowPostIdea(false);
+// config.identifyUser("USER_ID", "User Name", "email@example.com");
+//        UserVoice.init(config, this);
+
     }
 
     public void feedbackMail(){
-        Intent i = new Intent(Intent.ACTION_SEND);
-        i.setType("message/rfc822");
-        i.putExtra(Intent.EXTRA_EMAIL, new String[]{"brian@vueanalytics.co"});
-        i.putExtra(Intent.EXTRA_SUBJECT,"Feedback for Intro" );
-        try {
-            startActivity(Intent.createChooser(i, "Send mail..."));
 
-        } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(MyActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-        }
+// Call this wherever you want to launch UserVoice
+//        UserVoice.launchContactUs(this);
+//        Intent i = new Intent(Intent.ACTION_SEND);
+//        i.setType("message/rfc822");
+//        i.putExtra(Intent.EXTRA_EMAIL, new String[]{"brian@vueanalytics.co"});
+//        i.putExtra(Intent.EXTRA_SUBJECT,"Feedback for Intro" );
+//        try {
+//            startActivity(Intent.createChooser(i, "Send mail..."));
+//
+//        } catch (android.content.ActivityNotFoundException ex) {
+//            Toast.makeText(MyActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+//        }
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -97,8 +110,13 @@ public class MyActivity extends Activity {
         Intent i = new Intent(Intent.ACTION_SEND);
         i.setType("message/rfc822");
         i.putExtra(Intent.EXTRA_EMAIL, new String[]{email.getText().toString()});
-        i.putExtra(Intent.EXTRA_SUBJECT, sharedPref.getString("Subject","Nice meeting you at ")+place.getText().toString());
-        i.putExtra(Intent.EXTRA_TEXT   , sharedPref.getString("Body","It was great to meet you! Lets sync up this week"));
+        String location = place.getText().toString().trim();
+        if(location.length() > 0) {
+            i.putExtra(Intent.EXTRA_SUBJECT, sharedPref.getString("Subject", "Nice meeting you at ") + place.getText().toString());
+        } else {
+            i.putExtra(Intent.EXTRA_SUBJECT, sharedPref.getString("Subject","Nice meeting you"));
+        }
+        i.putExtra(Intent.EXTRA_TEXT   , sharedPref.getString("Body","Lets sync up this week!"));
 
 
 
