@@ -15,8 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//import com.uservoice.uservoicesdk.Config;
-//import com.uservoice.uservoicesdk.UserVoice;
+import com.uservoice.uservoicesdk.Config;
+import com.uservoice.uservoicesdk.UserVoice;
 
 public class MyActivity extends Activity {
 
@@ -74,19 +74,19 @@ public class MyActivity extends Activity {
         });
 
         // Set this up once when your application launches
-//        Config config = new Config("killthebusinesscard.uservoice.com");
-//        config.setShowKnowledgeBase(false);
-//        config.setShowForum(false);
-//        config.setShowPostIdea(false);
+        Config config = new Config("killthebusinesscard.uservoice.com");
+        config.setShowKnowledgeBase(false);
+        config.setShowForum(false);
+        config.setShowPostIdea(false);
 // config.identifyUser("USER_ID", "User Name", "email@example.com");
-//        UserVoice.init(config, this);
+        UserVoice.init(config, this);
 
     }
 
     public void feedbackMail(){
 
 // Call this wherever you want to launch UserVoice
-//        UserVoice.launchContactUs(this);
+        UserVoice.launchContactUs(this);
 //        Intent i = new Intent(Intent.ACTION_SEND);
 //        i.setType("message/rfc822");
 //        i.putExtra(Intent.EXTRA_EMAIL, new String[]{"brian@vueanalytics.co"});

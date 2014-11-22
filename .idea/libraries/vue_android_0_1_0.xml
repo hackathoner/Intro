@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="vue-android-0.1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/vue-android-0.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
