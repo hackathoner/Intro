@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import com.uservoice.uservoicesdk.Config;
 import com.uservoice.uservoicesdk.UserVoice;
+import co.vueanalytics.vue.VUE;
+
 
 public class MyActivity extends Activity {
 
@@ -28,6 +30,9 @@ public class MyActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        VUE.launch(this, "6c6184c3-0a89-48aa-839a-0a75b8bbbaa9");
+
         setContentView(R.layout.activity_my);
         ActionBar bar = this.getActionBar();
         bar.hide();
@@ -81,6 +86,18 @@ public class MyActivity extends Activity {
 // config.identifyUser("USER_ID", "User Name", "email@example.com");
         UserVoice.init(config, this);
 
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        VUE.startSession();
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        VUE.endSession();
     }
 
     public void feedbackMail(){

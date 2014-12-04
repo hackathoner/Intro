@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import co.vueanalytics.vue.VUE;
+
 
 public class Help extends Activity {
     private Button submit;
@@ -46,5 +48,17 @@ public class Help extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        VUE.startSession();
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        VUE.endSession();
     }
 }

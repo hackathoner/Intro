@@ -22,8 +22,6 @@ public class Edit extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        VUE.launch(this, "274f41fa-169d-42f7-9d3a-d8d643aaaf96");
-
         setContentView(R.layout.activity_edit);
         ActionBar bar = this.getActionBar();
         bar.hide();
@@ -43,7 +41,6 @@ public class Edit extends Activity {
         emailBody.setText(sharedPref.getString("Body","Enter you body text here"));
         emailHead.setText(sharedPref.getString("Subject","Enter you subject text here"));
 
-
         submit.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,8 +51,20 @@ public class Edit extends Activity {
             }
         });
 
-
     }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        VUE.startSession();
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        VUE.endSession();
+    }
+
     public void editEmail(){
         SharedPreferences sharedPref = this.getSharedPreferences("email.xml",MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
